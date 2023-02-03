@@ -262,9 +262,6 @@ workflows:
                   export KUBECONFIG=kubeconfig_nonprod-us-east-2
                   kubectl apply -f lab-system-namespace.yaml
             - do/circle-deploy
-            - do/slack-webhook:
-                message: lab-platform-eks-base nonprod-us-east-2 deployment
-                webhook-url: $LAB_EVENTS_CHANNEL_WEBHOOK
           requires:
             - approve nonprod-us-east-2 changes
           filters: *on-push-main
