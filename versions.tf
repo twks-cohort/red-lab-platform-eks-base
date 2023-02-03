@@ -10,7 +10,7 @@ terraform {
     hostname     = "app.terraform.io"
     organization = "twks-cohort"
     workspaces {
-      prefix = "red-red-lab-platform-eks-base-"
+      prefix = "red-lab-platform-eks-base-"
     }
   }
 }
