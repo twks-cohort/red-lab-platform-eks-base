@@ -1,1 +1,1 @@
-{{ op://cohorts/red-platform-nonprod-east-2/kubeconfig }}
+{{ op://cohorts/red-platform-$ENV/kubeconfig }}
