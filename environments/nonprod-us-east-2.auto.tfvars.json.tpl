@@ -27,5 +27,5 @@
     "oidc_client_id": "{{ op://cohorts/red-svc-auth0/client-id }}",
     "oidc_groups_claim": "https://github.com/orgs/twks-cohort/teams",
     "oidc_identity_provider_config_name": "Auth0",
-    "oidc_issuer_url": "https://dev-im0idu6svnrw0jwf.us.auth0.com/api/v2/"
+    "oidc_issuer_url": "https://dev-im0idu6svnrw0jwf.us.auth0.com/"
 }
