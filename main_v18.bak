@@ -138,18 +138,18 @@ module "eks" {
     }
   }
   # uncomment and use with the dpsctl integration
-  # cluster_identity_providers [
-  #   {
-  #     client_id                     = var.oidc_client_id
-  #     groups_claim                  = var.oidc_groups_claim
-  #     identity_provider_config_name = var.oidc_identity_provider_config_name
-  #     issuer_url                    = var.oidc_issuer_url
-  #     # groups_prefix
-  #     # required_claims
-  #     # username_claim
-  #     # username_prefix
-  #   }
-  # ]
+   cluster_identity_providers [
+     {
+       client_id                     = var.oidc_client_id
+       groups_claim                  = var.oidc_groups_claim
+       identity_provider_config_name = var.oidc_identity_provider_config_name
+       issuer_url                    = var.oidc_issuer_url
+       # groups_prefix
+       # required_claims
+       # username_claim
+       # username_prefix
+     }
+   ]
 
 }
 
