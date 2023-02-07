@@ -60,23 +60,3 @@ do
   INSTANCE_ID=$(aws ec2 describe-instances --filter Name=private-dns-name,Values=$i | jq -r '.Reservations[].Instances[] | .InstanceId')
   aws ec2 terminate-instances --instance-ids ${INSTANCE_ID}
 done || exit 1
-
-# echo
-# echo Checking datadog events to ensure health of bookinfo app during node replacements
-
-# # Check for any DataDog events since the script started for the bookinfo application
-# ENDTIME=$(date +%s)
-# events=$(curl -X GET "https://api.datadoghq.com/api/v1/events?start=${STARTTIME}&end=${ENDTIME}&tags=monitor,namespace:lhdi-bookinfo,cluster_name:${CLUSTER_NAME},monitor" \
-# -H "Content-Type: application/json" \
-# -H "DD-API-KEY: ${DATADOG_API_KEY}" \
-# -H "DD-APPLICATION-KEY: ${DATADOG_APP_KEY}")
-
-# bash scripts/mute_jaeger_monitor.sh unmute ${CLUSTER_NAME}
-
-# if [[ $events != '{"events":[]}' ]]; then
-#         echo Events found for the bookinfo application during node upgrades
-#         echo Please check Datadog for more information
-#         exit 1
-# else
-#         :
-# fi
